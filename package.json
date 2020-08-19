@@ -1,6 +1,6 @@
 {
   "name": "jl-element-ui",
-  "version": "v1.0.0",
+  "version": "1.0.1",
   "author": "yunfei_bai<baiyunfei@julive.com>",
   "description": "A Component Library for Vue.js.",
   "main": "lib/element-ui.common.js",
