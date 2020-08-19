@@ -1,6 +1,7 @@
 > A Vue.js 2.0 UI Toolkit for Web.
 ## Version
 - v1.0.0 (fork element ui v2.13.2) 
+ - v1.0.1 (fixed ) 
 
 
 ## Install
