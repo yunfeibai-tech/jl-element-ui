@@ -144,6 +144,43 @@ describe('Select', () => {
     }, 100);
   });
 
+  // 添加defalutLabel测试用例
+  it('default value not match options show defaultLabel', done => {
+    vm = createVue({
+      template: `
+        <div>
+          <el-select
+            default-label="no match"
+            v-model="value">
+            <el-option
+              v-for="item in options"
+              :label="item.label"
+              :key="item.value"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </div>
+      `,
+
+      data() {
+        return {
+          options: [{
+            value: '选项1',
+            label: '黄金糕'
+          }, {
+            value: '选项2',
+            label: '双皮奶'
+          }],
+          value: '未匹配的选项'
+        };
+      }
+    }, true);
+    setTimeout(() => {
+      expect(vm.$el.querySelector('.el-input__inner').value).to.equal('no match');
+      done();
+    }, 100);
+  });
+
   it('single select', done => {
     vm = createVue({
       template: `

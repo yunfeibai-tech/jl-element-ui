@@ -254,6 +254,8 @@
       value: {
         required: true
       },
+      // 添加无匹配时展示传递的默认值 仅针对单选
+      defaultLabel: String,
       autocomplete: {
         type: String,
         default: 'off'
@@ -526,7 +528,7 @@
         }
         if (option) return option;
         const label = (!isObject && !isNull && !isUndefined)
-          ? value : '';
+          ? (this.defaultLabel === undefined ? value : this.defaultLabel) : '';
         let newOption = {
           value: value,
           currentLabel: label
